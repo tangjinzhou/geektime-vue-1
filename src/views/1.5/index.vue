@@ -12,7 +12,7 @@
         <br />
         <Watch1 />
       </a-tab-pane>
-      <a-tab-pane key="Watch1_pro" tab="节流版">
+      <a-tab-pane key="Watch1_pro" tab="防抖版">
         <WatchPro />
       </a-tab-pane>
     </a-tabs>
