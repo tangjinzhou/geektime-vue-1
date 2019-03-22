@@ -9,8 +9,8 @@ import ChildrenA from "./ChildrenA";
 import ChildrenA1 from "./ChildrenA_a";
 export default {
   components: {
+    //ChildrenA
     ChildrenA1
-    //ChildrenA1
   }
 };
 </script>
