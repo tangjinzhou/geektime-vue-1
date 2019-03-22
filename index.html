@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <style>
+        .item {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        {{msg}}
+        <div>
+            <input type="text" v-model="info">
+            <button @click="handleClick">添加</button>
+        </div>
+        <ul>
+            <todo-item v-for="item in list" :item="item"></todo-item>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+        Vue.component('todo-item', {
+            props: ['item'],
+            template: '<li class="item">{{item}}</li>'
+        })
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    msg: 'hello geektime',
+                    info: '',
+                    list: [],
+                }
+            },
+            methods: {
+                handleClick() {
+                    this.list.push(this.info)
+                    this.info = ''
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
