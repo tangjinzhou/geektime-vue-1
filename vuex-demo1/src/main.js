@@ -15,9 +15,10 @@ const store = new Vuex.Store({
     }
   },
   actions: {
-    increment({state}) {
+    increment({commit}) {
       setTimeout(()=>{
-        state.count++
+        // state.count++ // 不要对state进行更改操作，应该通过commit交给mutations去处理
+        commit('increment')
       }, 3000)
     }
   },
