@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{message}} {{message + message}}
+        <div :id="message"></div>
+        <ul>
+            <li v-for="item in list">
+                <span v-if="!item.del">{{item.title}}</span>
+                <span v-else style="text-decoration: line-through">{{item.title}}</span>
+                <button v-show="!item.del">删除</button>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello world',
+                list: [{
+                    title: '课程1',
+                    del: false
+                }, {
+                    title: '课程2',
+                    del: true
+                }],
+            }
+        })
+    </script>
+</body>
+
+</html>
